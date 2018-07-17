@@ -19,12 +19,11 @@ class Solution:
 
     def trailingZeros(self, n):
         # write your code here, try to do it without arithmetic operators.
-        temp = n % 5
-        if temp == 0:
-            result = n / 5
-        else:
-            result = 0
-        return result
+        count = 0
+        while n > 0:
+            count += n / 5
+            n = n / 5
+        return count
 
 
 if __name__ == '__main__':
